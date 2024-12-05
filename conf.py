@@ -17,15 +17,15 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 import time
 
-project = 'FT2zXcXvX'
-author = '[AUTORZY]'
+project = 'potential-barrier'
+author = 'Maciej Szeptuch'
 titlepage = {
         "faculty": "Fizyki i Informatyki Stosowanej",
         "year": "auto",
-        "groupID": "[NR GRUPY ĆWICZENIOWEJ]",
-        "team": "[NR ZESPOŁU]",
-        "title": "[TEMAT ĆWICZENIA]",
-        "number": "[NUMER ĆWICZENIA]",
+        "groupID": "--",
+        "team": "--",
+        "title": "Bariera Potencjału - Efekt Tunelowania",
+        "number": "8.3.a",
 
         "taskDate": "auto", # [DATA LABORATORIUM]
         "creationDate": "auto", # [DATA POWSTANIA SPRAWOZDANIA]
@@ -57,7 +57,7 @@ issue_tracker_url="gh:gucio321/fizyka"
 # ones.
 extensions = [
         "sphinx.ext.githubpages",
-        "sphinxcontrib.images", # https://github.com/sphinx-contrib/images
+        #"sphinxcontrib.images", # https://github.com/sphinx-contrib/images
         "sphinxcontrib.plot",
         #"cloud_sptheme.ext.issue_tracker",
         "myst_parser" # ref: https://www.sphinx-doc.org/en/master/usage/markdown.html
