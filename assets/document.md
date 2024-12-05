@@ -166,8 +166,7 @@ C e^{k_2 a} + D e^{-k_2 a} + C e^{k_2 a} - D e^{-k_2 a} &=
 F e^{i k_1 a} + \frac{k_1}{k_2} F e^{ik_1 a} \\
 2 C e^{k_2 a} &=
 F e^{i k_1 a} \left(1 + \frac{k_1}{k_2}\right) \\
-C &=
-\frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right) \\
+C &= \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right) \\
 $$ (c)
 
 Następnie odejmijmy równanie 4 od równania 3:
@@ -177,6 +176,17 @@ C e^{k_2 a} + D e^{-k_2 a} - C e^{k_2 a} + D e^{-k_2 a} &= F e^{i k_1 a} - \frac
 2 D e^{-k_2 a} &= F e^{i k_1 a} \left(1 - \frac{k_1}{k_2}\right) \\
 D &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) \\
 $$ (d)
+
+Następnie podstawmy powyższe równania do równania 1 z układu {eq}`warunki-brzegowe`:
+
+$$
+A + B &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) + \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right) \\
+A + B &= \frac{F}{2} e^{i k_1 a} \left( e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) + e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right)\right) \\
+A + B &= \frac{F}{2} e^{i k_1 a} \left( e^{k_2 a} + e^{-k_2 a} - \frac{k_1}{k_2} \left(e^{k_2 a} - e^{-k_2 a}\right) \right) \\
+A + B &= \frac{F}{2} e^{i k_1 a} \left( 2 cosh\left(k_2 a\right) - 2 \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
+A + B &= F e^{i k_1 a} \left(cosh\left(k_2 a\right) - \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
+1 + \frac{B}{A} &= \frac{F}{A} e^{i k_1 a} \left(cosh\left(k_2 a\right) - \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
+$$
 
 # Literatura
 
