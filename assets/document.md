@@ -177,7 +177,7 @@ C e^{k_2 a} + D e^{-k_2 a} - C e^{k_2 a} + D e^{-k_2 a} &= F e^{i k_1 a} - \frac
 D &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) \\
 $$ (d)
 
-Następnie podstawmy powyższe równania do równania 1 z układu {eq}`warunki-brzegowe`:
+Następnie podstawmy {eq}`c` i {eq}`d` do równania 1 z układu {eq}`warunki-brzegowe`:
 
 $$
 A + B &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) + \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right) \\
