@@ -130,7 +130,7 @@ def defineLatexVar(varName : str, var : str) -> str:
 
     return r'\newcommand{' + varName + r'}{' + var + "}"
 
-latex_additional_files = ['resources/titlepage.cls', 'resources/logo_AGH.jpg']
+latex_additional_files = ['resources/titlepage.cls']
 latex_elements = {
         'papersize': 'a4paper',
         'pointsize': '12pt',
@@ -140,6 +140,7 @@ latex_elements = {
         \ChNumVar{}
         \let\endtitlepage\relax
         \usepackage{cancel}
+        \usepackage{tikz}
         \usepackage{tabularx}
         \usepackage[utf8]{inputenc}
         \usepackage{etoolbox}

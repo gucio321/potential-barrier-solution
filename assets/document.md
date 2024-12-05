@@ -1,17 +1,186 @@
 # Cel ćwiczenia
 
-# Wstęp teoretyczny
+Proszę rozwiązać problem (tzn. znaleźć funkcje falowe) cząstki o energii E > 0 padającej na barierę potencjału o wysokości $V_0$ i szerokości d:
 
-# Aparatura i metodyka wykonania
+$$
+V(x) = \left\{
+\begin{array}{ll}
+0 & \text{dla } x < 0 \text{ i } x > d \\
+V_0 & \text{dla } 0 \leq x \leq d
+\end{array}
+\right.
+$$
 
-# Wyniki pomiarów
+Dodatkowo proszę znaleźć współczynniki transmisji T i odbicia R cząstki padającej na barie-
+rę. Własnoręcznie zapisane rozwiązania należy oddać na zajęciach, będą one ocenione jako
+aktywność (0-3 pkt.).
 
-# Obliczenia
+# Rozwiązanie
 
-# Szacowanie niepewności
+Z niezalego od czasu røwnania Schrödingera mamy:
 
-# Podsumowanie
+$$
+- \frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} + V \psi = E \psi \\
+- \frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} = (E - V) \psi \\
+\frac{\partial^2 \psi}{\partial x^2} = - \frac{2m}{\hbar^2} (E - V) \psi \\
+\frac{\partial^2 \psi}{\partial x^2} = \frac{2m}{\hbar^2} (V - E) \psi \\
+\frac{\partial^2 \psi}{\partial x^2} - \frac{2m}{\hbar^2} (V - E) \psi  = 0\\
+$$ (rs)
+
+```{important}
+Zdefiniujmy stałe $k_1$ i $k_2$ w następujący sposób:
+
+$$
+k_1^2 = \frac{2mE}{\hbar^2} E \\
+k_2^2 = \frac{2mE}{\hbar^2} (V_0 - E) \\
+$$ (k)
+```
+
+## 3 przypadki
+
+Rozważmy następujący rysunek.
+
+```{raw} latex
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\fill[gray!20!white] (5,0) rectangle (7, 5);
+\draw (0,0) -- (5,0) -- (5,5) -- (7, 5) -- (7,0) -- (12,0);
+\node[anchor=north] at (5, 0) {0};
+\node[anchor=north] at (7, 0) {a};
+\node at (6, 2.5) {$V_0$};
+\end{tikzpicture}
+\caption{Bariera potencjału}
+\end{figure}
+```
+
+Należy zapisać Równanie {eq}`rs` dla trzech przypadków:
+
+### $x < 0$
+
+$V_0 = 0$, więc (biorąc pod uwagę {eq}`k`) mamy:
+
+$$
+\frac{\partial^2 \psi}{\partial x^2} + k_1^2 \psi  = 0\\
+$$
+
+Rozwiązaniem tak zdefiniowanego równania jest  jest funcja w postaci:
+
+$$
+\psi_1(x) = A e^{i k_1 x} + B e^{-i k_1 x}
+$$ (psi1)
+
+Warto zauważyć, że wyraz $A e^{i k_1 x}$ odpowiada za ruch cząstki w prawo (ku barierze potencjału),
+natomiast $B e^{-i k_1 x}$ opisuje falę odbitą.
+
+```{raw} latex
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\fill[gray!20!white] (2,0) rectangle (3, 2);
+\draw (0,0) -- (2,0) -- (2,2) -- (3, 2) -- (3,0) -- (5,0);
+\node[anchor=north] at (2, 0) {0};
+\node[anchor=north] at (3, 0) {a};
+\node at (6, 2.5) {$V_0$};
+    \draw[domain=0:2, samples=100]
+        plot (\x, {0.3*sin(10 * \x r) + 1})
+        plot (\x, {0.1*sin(15 * \x r) + 0.5});
+    \draw[<-] (0.1, 0.2) -- (0.5, 0.2);
+    \draw[->] (0.1, 1.5) -- (0.5, 1.5);
+\end{tikzpicture}
+\caption{Fala padająca i odbita}
+\end{figure}
+```
+
+### $x \in [0, a]$
+
+Dla tego przypadku równanie {eq}`rs` przyjmuje postać:
+
+$$
+\frac{\partial^2 \psi}{\partial x^2} - k_2^2 \psi  = 0\\
+$$
+
+Takie równanie ma rozwiązanie w postaci:
+
+$$
+\psi_2(x) = C e^{i k_2 x} + D e^{-i k_2 x}
+$$ (psi2)
+
+### $x > a$
+
+Dla tego przypadku otrzymamy rozwiązanie analogiczne do {eq}`psi1`.
+Zapiszmy je w postaci
+
+$$
+\psi_3(x) = F e^{i k_1 x} + G e^{-i k_1 x}
+$$
+
+Zauważmy, że w tym przypadku nie może istnieć fala odbita, dlatego $G = 0$.
+
+$$
+\psi_3(x) = F e^{i k_1 x} 
+$$ (psi3)
+
+## Warunki brzegowe
+
+Z założeń mechaniki kwantowej wiemy, że funkcja falowa musi być ciągła.
+Ponatdo pierwsza pochodna funkcji falowej względem zmiennej $x$ również musi być ciągła.
+Z tych założeń możemy zapisać następujące równania:
+
+$$
+&\left\{
+    \begin{array}{ll}
+        \psi_1(0) = \psi_2(0) \\
+        \frac{\partial \psi_1}{\partial x}(0) = \frac{\partial \psi_2}{\partial x}(0) \\
+        \psi_2(a) = \psi_3(a) \\
+        \frac{\partial \psi_2}{\partial x}(a) = \frac{\partial \psi_3}{\partial x}(a) \\
+    \end{array}
+\right. \\
+&\left\{
+    \begin{array}{ll}
+        A + B = C + D \\
+        i k_1 (A - B) = k_2 (C - D) \\
+        C e^{k_2 a} + D e^{-k_2 a} = F e^{i k_1 a} \\
+        k_2 \left(C e^{k_2 a} - D e^{-k_2 a}\right) = E k_1 e^{ik_1 a} \\
+    \end{array}
+\right. \\
+&\left\{
+    \begin{array}{ll}
+        A + B = C + D \\
+        A - B = -i \frac{k_2}{k_1} (C - D) \\
+        C e^{k_2 a} + D e^{-k_2 a} = F e^{i k_1 a} \\
+        C e^{k_2 a} - D e^{-k_2 a} = \frac{k_1}{k_2} F e^{ik_1 a} \\
+    \end{array}
+\right.
+$$ (warunki-brzegowe)
+
+## Współczynnik transmisji
+
+Zgodnie z definicją, współćzynnik transmisji $T$ to 
+stosunek amplitudy fali po przejściu przez barierę do jej amplitudy przed nią $T = \left|\frac{F}{A}\right|^2$.
+
+Z układu {eq}`warunki-brzegowe` dodajmy róœnanie 3 i 4:
+
+$$
+C e^{k_2 a} + D e^{-k_2 a} + C e^{k_2 a} - D e^{-k_2 a} &=
+F e^{i k_1 a} + \frac{k_1}{k_2} F e^{ik_1 a} \\
+2 C e^{k_2 a} &=
+F e^{i k_1 a} \left(1 + \frac{k_1}{k_2}\right) \\
+C &=
+\frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right) \\
+$$ (c)
+
+Następnie odejmijmy równanie 4 od równania 3:
+
+$$
+C e^{k_2 a} + D e^{-k_2 a} - C e^{k_2 a} + D e^{-k_2 a} &= F e^{i k_1 a} - \frac{k_1}{k_2} F e^{ik_1 a} \\
+2 D e^{-k_2 a} &= F e^{i k_1 a} \left(1 - \frac{k_1}{k_2}\right) \\
+D &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) \\
+$$ (d)
 
 # Literatura
 
-- prof. dr hab. inż. Wojciech Łużny - Kurs Mechaniki.
+- wyprowadzenie: For the Love of Physics - Quantum Tunneling - [https://youtu.be/78Sp1KboLtI?list=PLRN3HroZGu2mCtdalEmZAM2nr1xBWAtUn](https://www.youtube.com/watch?v=78Sp1KboLtI&list=PLRN3HroZGu2mCtdalEmZAM2nr1xBWAtUn&index=38) dostęp 05.12.2024 16:26
+- sprawdzenie: Quantum Physics of Atoms, Molecules, Solids, Nuclei, and Particles, R. Resnick, R. Eisberg
+
+_Źródło dokumentu: https://github.com/gucio321/potential-barrier-solution_
