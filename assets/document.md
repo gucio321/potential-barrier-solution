@@ -17,7 +17,7 @@ aktywność (0-3 pkt.).
 
 # Rozwiązanie
 
-Z niezalego od czasu røwnania Schrödingera mamy:
+Przekształcam niezależne od czasu równanie Schrödingera:
 
 $$
 - \frac{\hbar^2}{2m} \frac{\partial^2 \psi}{\partial x^2} + V \psi = E \psi \\
@@ -28,7 +28,7 @@ $$
 $$ (rs)
 
 ```{important}
-Zdefiniujmy stałe $k_1$ i $k_2$ w następujący sposób:
+Definiuję stałe $k_1$ i $k_2$ w następujący sposób:
 
 $$
 k_1^2 = \frac{2m}{\hbar^2} E \\
@@ -36,9 +36,9 @@ k_2^2 = \frac{2m}{\hbar^2} (V_0 - E) \\
 $$ (k)
 ```
 
-## 3 przypadki
+## Ogólne rozwiązanie równania Schrödingera
 
-Rozważmy następujący rysunek.
+Rozważam następujący rysunek.
 
 ```{raw} latex
 \begin{figure}[H]
@@ -58,19 +58,19 @@ Należy zapisać Równanie {eq}`rs` dla trzech przypadków:
 
 ### $x < 0$
 
-$V_0 = 0$, więc (biorąc pod uwagę {eq}`k`) mamy:
+$V = 0$, więc (biorąc pod uwagę {eq}`k`) jest:
 
 $$
 \frac{\partial^2 \psi}{\partial x^2} + k_1^2 \psi  = 0\\
 $$
 
-Rozwiązaniem tak zdefiniowanego równania jest  jest funcja w postaci:
+Rozwiązaniem tak zdefiniowanego równania jest funcja w postaci:
 
 $$
 \psi_1(x) = A e^{i k_1 x} + B e^{-i k_1 x}
 $$ (psi1)
 
-Warto zauważyć, że wyraz $A e^{i k_1 x}$ odpowiada za ruch cząstki w prawo (ku barierze potencjału),
+Warto zauważyć, że wyraz $A e^{i k_1 x}$ odpowiada jest za ruch cząstki w prawo (ku barierze potencjału),
 natomiast $B e^{-i k_1 x}$ opisuje falę odbitą.
 
 ```{raw} latex
@@ -103,19 +103,19 @@ $$
 Takie równanie ma rozwiązanie w postaci:
 
 $$
-\psi_2(x) = C e^{i k_2 x} + D e^{-i k_2 x}
+\psi_2(x) = C e^{k_2 x} + D e^{-k_2 x}
 $$ (psi2)
 
 ### $x > a$
 
-Dla tego przypadku otrzymamy rozwiązanie analogiczne do {eq}`psi1`.
-Zapiszmy je w postaci
+Dla tego przypadku otrzymuję rozwiązanie analogiczne do {eq}`psi1`.
+Zapisuję je w postaci:
 
 $$
 \psi_3(x) = F e^{i k_1 x} + G e^{-i k_1 x}
 $$
 
-Zauważmy, że w tym przypadku nie może istnieć fala odbita, dlatego $G = 0$.
+Zauważam, że w tym przypadku nie może istnieć fala odbita, dlatego $G = 0$.
 
 $$
 \psi_3(x) = F e^{i k_1 x} 
@@ -123,9 +123,9 @@ $$ (psi3)
 
 ## Warunki brzegowe
 
-Z założeń mechaniki kwantowej wiemy, że funkcja falowa musi być ciągła.
-Ponatdo pierwsza pochodna funkcji falowej względem zmiennej $x$ również musi być ciągła.
-Z tych założeń możemy zapisać następujące równania:
+Z założeń mechaniki kwantowej wiem, że funkcja falowa musi być ciągła.
+Ponadto pierwsza pochodna funkcji falowej względem zmiennej $x$ również musi być ciągła.
+Z tych założeń mogę zapisać następujące równania:
 
 $$
 &\left\{
@@ -158,10 +158,14 @@ $$ (warunki-brzegowe)
 
 ```{admonition} Definicja
 Współćzynnik transmisji $T$ to 
-stosunek amplitudy fali po przejściu przez barierę do jej amplitudy przed nią $T = \left|\frac{F}{A}\right|^2$.
+kwadrat stosunku amplitudy fali po przejściu przez barierę do jej amplitudy przed nią
+
+$$
+T = \left|\frac{F}{A}\right|^2
+$$ (Tdef)
 ```
 
-Z układu {eq}`warunki-brzegowe` dodajmy równanie 3 i 4:
+Z układu {eq}`warunki-brzegowe` dodaję równanie 3 i 4:
 
 $$
 C e^{k_2 a} + D e^{-k_2 a} + C e^{k_2 a} - D e^{-k_2 a} &=
@@ -171,7 +175,7 @@ F e^{i k_1 a} \left(1 + i \frac{k_1}{k_2}\right) \\
 C &= \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + i \frac{k_1}{k_2}\right) \\
 $$ (c)
 
-Następnie odejmijmy równanie 4 od równania 3:
+Następnie odejmiję równanie 4 od równania 3:
 
 $$
 C e^{k_2 a} + D e^{-k_2 a} - C e^{k_2 a} + D e^{-k_2 a} &= F e^{i k_1 a} - i \frac{k_1}{k_2} F e^{ik_1 a} \\
@@ -179,7 +183,7 @@ C e^{k_2 a} + D e^{-k_2 a} - C e^{k_2 a} + D e^{-k_2 a} &= F e^{i k_1 a} - i \fr
 D &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - i \frac{k_1}{k_2}\right) \\
 $$ (d)
 
-Następnie podstawmy {eq}`c` i {eq}`d` do równania 1 z układu {eq}`warunki-brzegowe`:
+Następnie podstawiam {eq}`c` i {eq}`d` do równania 1 z układu {eq}`warunki-brzegowe`:
 
 $$
 A + B &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - i \frac{k_1}{k_2}\right) + \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + i \frac{k_1}{k_2}\right) \\
@@ -202,7 +206,7 @@ A - B &= F e^{i k_1 a} \left(i \frac{k_2}{k_1} sinh\left(k_2 a\right) + cosh \le
 1 - \frac{B}{A} &= \frac{F}{A} e^{i k_1 a} \left(i \frac{k_2}{k_1} sinh\left(k_2 a\right) + cosh \left(k_2 a\right)\right) \\
 $$ (ab2)
 
-Dodaję równania {eq}`ab1` i {eq}`ab2`:
+Sumuję równania {eq}`ab1` i {eq}`ab2`:
 
 $$
 1 + \frac{B}{A} + 1 - \frac{B}{A} &= \frac{F}{A} e^{i k_1 a} \left(cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) + \frac{F}{A} e^{i k_1 a} \left(i \frac{k_2}{k_1} sinh\left(k_2 a\right) + cosh \left(k_2 a\right)\right) \\
@@ -212,7 +216,7 @@ $$
 \frac{F}{A} &= 2 e^{-i k_1 a} \left(2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right)^{-1} \\
 $$
 
-Podstawiam powyższy wynik do definicji T:
+Podstawiam powyższy wynik do definicji T {eq}`Tdef`:
 
 $$
 T &= \left|\frac{F}{A}\right|^2 \\
@@ -223,7 +227,7 @@ T &= 4 \left(4 cosh^2\left(k_2 a\right) + \left(\frac{k_2^2 - k_1^2}{k_1 k_2}\ri
 $$
 
 ```{tip}
-W poniższym przekształceniu wykorzystałem tzw jedynkę hiperboliczną
+W poniższym przekształceniu wykorzystuję tzw. jedynkę hiperboliczną
 
 $$
 cosh^2(x) - sinh^2(x) = 1
@@ -239,25 +243,55 @@ T &= \left(1  + sinh^2\left(k_2 a\right)\left(\frac{k_2^2 + k_1^2}{2 k_1 k_2}\ri
 $$
 
 ```{note}
-Za za wyrażenie z $k_1$ i $k_2$ można podstawić wartości z definicji {eq}`k`.
+Za wyrażenie z $k_1$ i $k_2$ można podstawić wartości z definicji {eq}`k`.
 
 $$
 \left(\frac{k_2^2 + k_1^2}{2 k_1 k_2}\right) =  \\
-\frac{\left(k_1^2 + k_2^2\right)^2}{4 k_1^2 k_2^2} = \\
-\frac{\left(\frac{2m}{\hbar^2} E +\frac{2m}{\hbar^2} (V_0 - E) \right)^2}{4 \frac{2m}{\hbar^2} E \frac{2m}{\hbar^2} (V_0 - E)} = \\
-\frac{\left(\frac{2m}{\hbar^2} V_0 \right)^2}{16 \frac{m^2}{\hbar^4} E (V_0 - E)} = \\
-\frac{V_0^2}{16 E (V_0 - E)}
+= \frac{\left(k_1^2 + k_2^2\right)^2}{4 k_1^2 k_2^2} = \\
+= \frac{\left(\frac{2m}{\hbar^2} E +\frac{2m}{\hbar^2} (V_0 - E) \right)^2}{4 \frac{2m}{\hbar^2} E \frac{2m}{\hbar^2} (V_0 - E)} = \\
+= \frac{\left(\frac{2m}{\hbar^2} V_0 \right)^2}{16 \frac{m^2}{\hbar^4} E (V_0 - E)} = \\
+= \frac{V_0^2}{16 E (V_0 - E)}
 $$
 ```
-
 
 W ostatecznej formię wzór na T można zapisać w następującej postaci:
 
 $$
 T &= \left(1  + sinh^2\left(k_2 a\right) \frac{V_0^2}{16 E (V_0 - E)} \right)^{-1} \\
+T &= \left(1  + sinh^2\left(\sqrt{\frac{2m}{\hbar^2} (V_0-E)} a\right) \frac{V_0^2}{16 E (V_0 - E)} \right)^{-1} \\
 $$ (wzor-koncowy)
 
 _Analogiczną postać wzoru przedstawia równanie 6-45 książki Eisberg'a i Restnick'a [literatura](#literatura)._
+
+# Podsumowanie
+
+Jak widać z {eq}`wzor-koncowy` wsþółczynnik Transmisji jest niezerowy, co
+oznacza, że cząstka o niewystarczającej energii może przeniknąć przez barierę potencjału.
+
+Poniższy wykres przedstawia 
+
+```{plot} gnuplot
+:caption: Zależność współczynnika transmisji od szerokości bariery.
+
+set xrange [0:4]
+set ylabel "T - współczynnik transmisji"
+set xlabel "a - szerokość bariery"
+
+m=1
+hbar=1
+E = 1
+
+f(a, V) = (1  + sinh(sqrt((2*m)/(hbar**2) * (V-E)) * a)**2 * (V**2)/(16*E*(V - E)) )**(-1)
+
+plot f(x, 2) lw 2 title "T(a, V_0 = 2 j.u.)", \
+     f(x, 4) lw 2 title "T(a, V_0 = 4 j.u.)",
+```
+
+```{attention}
+Wielkości na powyższym wykresie są przedstawione w tzw. Jednostkach Umownych ($m = \hbar = E = 1$) - nie mają
+one związku z rzeczywistymi wartościami współczynników - powyższy wykres przedstawia jedynie
+kształt zależności.
+```
 
 # Literatura
 
