@@ -31,8 +31,8 @@ $$ (rs)
 Zdefiniujmy stałe $k_1$ i $k_2$ w następujący sposób:
 
 $$
-k_1^2 = \frac{2mE}{\hbar^2} E \\
-k_2^2 = \frac{2mE}{\hbar^2} (V_0 - E) \\
+k_1^2 = \frac{2m}{\hbar^2} E \\
+k_2^2 = \frac{2m}{\hbar^2} (V_0 - E) \\
 $$ (k)
 ```
 
@@ -141,7 +141,7 @@ $$
         A + B = C + D \\
         i k_1 (A - B) = k_2 (C - D) \\
         C e^{k_2 a} + D e^{-k_2 a} = F e^{i k_1 a} \\
-        k_2 \left(C e^{k_2 a} - D e^{-k_2 a}\right) = E k_1 e^{ik_1 a} \\
+        k_2 \left(C e^{k_2 a} - D e^{-k_2 a}\right) = F i k_1 e^{ik_1 a} \\
     \end{array}
 \right. \\
 &\left\{
@@ -149,44 +149,115 @@ $$
         A + B = C + D \\
         A - B = -i \frac{k_2}{k_1} (C - D) \\
         C e^{k_2 a} + D e^{-k_2 a} = F e^{i k_1 a} \\
-        C e^{k_2 a} - D e^{-k_2 a} = \frac{k_1}{k_2} F e^{ik_1 a} \\
+        C e^{k_2 a} - D e^{-k_2 a} = i \frac{k_1}{k_2} F e^{ik_1 a} \\
     \end{array}
 \right.
 $$ (warunki-brzegowe)
 
 ## Współczynnik transmisji
 
-Zgodnie z definicją, współćzynnik transmisji $T$ to 
+```{admonition} Definicja
+Współćzynnik transmisji $T$ to 
 stosunek amplitudy fali po przejściu przez barierę do jej amplitudy przed nią $T = \left|\frac{F}{A}\right|^2$.
+```
 
-Z układu {eq}`warunki-brzegowe` dodajmy róœnanie 3 i 4:
+Z układu {eq}`warunki-brzegowe` dodajmy równanie 3 i 4:
 
 $$
 C e^{k_2 a} + D e^{-k_2 a} + C e^{k_2 a} - D e^{-k_2 a} &=
-F e^{i k_1 a} + \frac{k_1}{k_2} F e^{ik_1 a} \\
+F e^{i k_1 a} + i \frac{k_1}{k_2} F e^{ik_1 a} \\
 2 C e^{k_2 a} &=
-F e^{i k_1 a} \left(1 + \frac{k_1}{k_2}\right) \\
-C &= \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right) \\
+F e^{i k_1 a} \left(1 + i \frac{k_1}{k_2}\right) \\
+C &= \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + i \frac{k_1}{k_2}\right) \\
 $$ (c)
 
 Następnie odejmijmy równanie 4 od równania 3:
 
 $$
-C e^{k_2 a} + D e^{-k_2 a} - C e^{k_2 a} + D e^{-k_2 a} &= F e^{i k_1 a} - \frac{k_1}{k_2} F e^{ik_1 a} \\
-2 D e^{-k_2 a} &= F e^{i k_1 a} \left(1 - \frac{k_1}{k_2}\right) \\
-D &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) \\
+C e^{k_2 a} + D e^{-k_2 a} - C e^{k_2 a} + D e^{-k_2 a} &= F e^{i k_1 a} - i \frac{k_1}{k_2} F e^{ik_1 a} \\
+2 D e^{-k_2 a} &= F e^{i k_1 a} \left(1 - i \frac{k_1}{k_2}\right) \\
+D &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - i \frac{k_1}{k_2}\right) \\
 $$ (d)
 
 Następnie podstawmy {eq}`c` i {eq}`d` do równania 1 z układu {eq}`warunki-brzegowe`:
 
 $$
-A + B &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) + \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right) \\
-A + B &= \frac{F}{2} e^{i k_1 a} \left( e^{k_2 a} \left(1 - \frac{k_1}{k_2}\right) + e^{-k_2 a} \left(1 + \frac{k_1}{k_2}\right)\right) \\
-A + B &= \frac{F}{2} e^{i k_1 a} \left( e^{k_2 a} + e^{-k_2 a} - \frac{k_1}{k_2} \left(e^{k_2 a} - e^{-k_2 a}\right) \right) \\
-A + B &= \frac{F}{2} e^{i k_1 a} \left( 2 cosh\left(k_2 a\right) - 2 \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
-A + B &= F e^{i k_1 a} \left(cosh\left(k_2 a\right) - \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
-1 + \frac{B}{A} &= \frac{F}{A} e^{i k_1 a} \left(cosh\left(k_2 a\right) - \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
+A + B &= \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - i \frac{k_1}{k_2}\right) + \frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + i \frac{k_1}{k_2}\right) \\
+A + B &= \frac{F}{2} e^{i k_1 a} \left( e^{k_2 a} \left(1 - i \frac{k_1}{k_2}\right) + e^{-k_2 a} \left(1 + i \frac{k_1}{k_2}\right)\right) \\
+A + B &= \frac{F}{2} e^{i k_1 a} \left( e^{k_2 a} + e^{-k_2 a} - i \frac{k_1}{k_2} \left(e^{k_2 a} - e^{-k_2 a}\right) \right) \\
+A + B &= \frac{F}{2} e^{i k_1 a} \left( 2 cosh\left(k_2 a\right) - 2 i \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
+A + B &= F e^{i k_1 a} \left(cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
+1 + \frac{B}{A} &= \frac{F}{A} e^{i k_1 a} \left(cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) \\
+$$ (ab1)
+
+Analogiczne działania wykonuję dla równania 2 z układu {eq}`warunki-brzegowe`:
+
 $$
+A - B &= -i \frac{k_2}{k_1} \left(\frac{F}{2} e^{i k_1 a} e^{-k_2 a} \left(1 + i \frac{k_1}{k_2}\right) - \frac{F}{2} e^{i k_1 a} e^{k_2 a} \left(1 - i \frac{k_1}{k_2}\right)\right) \\
+A - B &= -i \frac{k_2}{k_1} \frac{F}{2} e^{i k_1 a} \left(e^{-k_2 a} \left(1 + i \frac{k_1}{k_2}\right) - e^{k_2 a} \left(1 - i \frac{k_1}{k_2}\right)\right) \\
+A - B &= -i \frac{k_2}{k_1} \frac{F}{2} e^{i k_1 a} \left(e^{-k_2 a} - e^{k_2 a} + i \frac{k_1}{k_2} \left(e^{k_2 a} + e^{k_2 a} \right)\right) \\
+A - B &= -i \frac{k_2}{k_1} \frac{F}{2} e^{i k_1 a} \left(- 2 sinh\left(k_2 a\right) + 2 i \frac{k_1}{k_2} cosh \left(k_2 a\right)\right) \\
+A - B &= i \frac{k_2}{k_1} F e^{i k_1 a} \left(sinh\left(k_2 a\right) - i \frac{k_1}{k_2} cosh \left(k_2 a\right)\right) \\
+A - B &= F e^{i k_1 a} \left(i \frac{k_2}{k_1} sinh\left(k_2 a\right) + cosh \left(k_2 a\right)\right) \\
+1 - \frac{B}{A} &= \frac{F}{A} e^{i k_1 a} \left(i \frac{k_2}{k_1} sinh\left(k_2 a\right) + cosh \left(k_2 a\right)\right) \\
+$$ (ab2)
+
+Dodaję równania {eq}`ab1` i {eq}`ab2`:
+
+$$
+1 + \frac{B}{A} + 1 - \frac{B}{A} &= \frac{F}{A} e^{i k_1 a} \left(cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) + \frac{F}{A} e^{i k_1 a} \left(i \frac{k_2}{k_1} sinh\left(k_2 a\right) + cosh \left(k_2 a\right)\right) \\
+2 &= \frac{F}{A} e^{i k_1 a} \left(cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right) + i \frac{k_2}{k_1} sinh\left(k_2 a\right) + cosh \left(k_2 a\right)\right) \\
+2 &= \frac{F}{A} e^{i k_1 a} \left(2 cosh\left(k_2 a\right) + i \left(\frac{k_2}{k_1} - \frac{k_1}{k_2}\right) sinh \left(k_2 a\right) \right) \\
+2 &= \frac{F}{A} e^{i k_1 a} \left(2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right) \\
+\frac{F}{A} &= 2 e^{-i k_1 a} \left(2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right)^{-1} \\
+$$
+
+Podstawiam powyższy wynik do definicji T:
+
+$$
+T &= \left|\frac{F}{A}\right|^2 \\
+T &= \left(\frac{F}{A}\right) \left(\frac{F}{A}\right)^* \\
+T &= 2 e^{-i k_1 a} \left(2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right)^{-1} 2 e^{i k_1 a} \left(2 cosh\left(k_2 a\right) - i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right)^{-1} \\
+T &= 4 \cancel{e^{-i k_1 a}} \left(2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right)^{-1} \cancel{e^{i k_1 a}} \left(2 cosh\left(k_2 a\right) - i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right)^{-1} \\
+T &= 4 \left(4 cosh^2\left(k_2 a\right) + \left(\frac{k_2^2 - k_1^2}{k_1 k_2}\right)^2 sinh^2 \left(k_2 a\right) \right)^{-1} \\
+$$
+
+```{tip}
+W poniższym przekształceniu wykorzystałem tzw jedynkę hiperboliczną
+
+$$
+cosh^2(x) - sinh^2(x) = 1
+$$
+```
+
+$$
+T &= 4 \left(4  + 4 sinh^2\left(k_2 a\right) + \left(\frac{k_2^2 - k_1^2}{k_1 k_2}\right)^2 sinh^2 \left(k_2 a\right) \right)^{-1} \\
+T &= 4 \left(4  + sinh^2\left(k_2 a\right)\left(4 + \left(\frac{k_2^2 - k_1^2}{k_1 k_2}\right)^2\right) \right)^{-1} \\
+T &= 4 \left(4  + sinh^2\left(k_2 a\right)\left(\frac{4 k_1^2 k_2^2 + k_2^4 - 2 k_1^2 k_2^2 + k_1^4}{k_1^4 k_2^4}\right) \right)^{-1} \\
+T &= 4 \left(4  + sinh^2\left(k_2 a\right)\left(\frac{k_2^2 + k_1^2}{k_1 k_2}\right)^2 \right)^{-1} \\
+T &= \left(1  + sinh^2\left(k_2 a\right)\left(\frac{k_2^2 + k_1^2}{2 k_1 k_2}\right)^2 \right)^{-1} \\
+$$
+
+```{note}
+Za za wyrażenie z $k_1$ i $k_2$ można podstawić wartości z definicji {eq}`k`.
+
+$$
+\left(\frac{k_2^2 + k_1^2}{2 k_1 k_2}\right) =  \\
+\frac{\left(k_1^2 + k_2^2\right)^2}{4 k_1^2 k_2^2} = \\
+\frac{\left(\frac{2m}{\hbar^2} E +\frac{2m}{\hbar^2} (V_0 - E) \right)^2}{4 \frac{2m}{\hbar^2} E \frac{2m}{\hbar^2} (V_0 - E)} = \\
+\frac{\left(\frac{2m}{\hbar^2} V_0 \right)^2}{16 \frac{m^2}{\hbar^4} E (V_0 - E)} = \\
+\frac{V_0^2}{16 E (V_0 - E)}
+$$
+```
+
+
+W ostatecznej formię wzór na T można zapisać w następującej postaci:
+
+$$
+T &= \left(1  + sinh^2\left(k_2 a\right) \frac{V_0^2}{16 E (V_0 - E)} \right)^{-1} \\
+$$ (wzor-koncowy)
+
+_Analogiczną postać wzoru przedstawia równanie 6-45 książki Eisberg'a i Restnick'a [literatura](#literatura)._
 
 # Literatura
 
