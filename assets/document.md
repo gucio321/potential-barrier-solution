@@ -15,7 +15,7 @@ Dodatkowo proszę znaleźć współczynniki transmisji T i odbicia R cząstki pa
 rę. Własnoręcznie zapisane rozwiązania należy oddać na zajęciach, będą one ocenione jako
 aktywność (0-3 pkt.).
 
-# Rozwiązanie
+# Rozważenia wstępne
 
 Przekształcam niezależne od czasu równanie Schrödingera:
 
@@ -154,7 +154,8 @@ $$
 \right.
 $$ (warunki-brzegowe)
 
-## Współczynnik transmisji
+(wt)=
+# Współczynnik Transmisji
 
 ```{admonition} Definicja
 Współćzynnik transmisji $T$ to 
@@ -214,7 +215,7 @@ $$
 2 &= \frac{F}{A} e^{i k_1 a} \left(2 cosh\left(k_2 a\right) + i \left(\frac{k_2}{k_1} - \frac{k_1}{k_2}\right) sinh \left(k_2 a\right) \right) \\
 2 &= \frac{F}{A} e^{i k_1 a} \left(2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right) \\
 \frac{F}{A} &= 2 e^{-i k_1 a} \left(2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right)^{-1} \\
-$$
+$$ (fa)
 
 Podstawiam powyższy wynik do definicji T {eq}`Tdef`:
 
@@ -246,12 +247,12 @@ $$
 Za wyrażenie z $k_1$ i $k_2$ można podstawić wartości z definicji {eq}`k`.
 
 $$
-\left(\frac{k_2^2 + k_1^2}{2 k_1 k_2}\right) =  \\
+\left(\frac{k_2^2 + k_1^2}{2 k_1 k_2}\right)^2 =  \\
 = \frac{\left(k_1^2 + k_2^2\right)^2}{4 k_1^2 k_2^2} = \\
 = \frac{\left(\frac{2m}{\hbar^2} E +\frac{2m}{\hbar^2} (V_0 - E) \right)^2}{4 \frac{2m}{\hbar^2} E \frac{2m}{\hbar^2} (V_0 - E)} = \\
 = \frac{\left(\frac{2m}{\hbar^2} V_0 \right)^2}{16 \frac{m^2}{\hbar^4} E (V_0 - E)} = \\
 = \frac{V_0^2}{16 E (V_0 - E)}
-$$
+$$ (k-podst)
 ```
 
 W ostatecznej formię wzór na T można zapisać w następującej postaci:
@@ -263,17 +264,73 @@ $$ (wzor-koncowy)
 
 _Analogiczną postać wzoru przedstawia równanie 6-45 książki Eisberg'a i Restnick'a [literatura](#literatura)._
 
+# Współczynnik Odbicia
+
+```{admonition} Definicja
+Analogicznie do [współczynnika Transmisji](#wt),
+Współczynnik odbicia $R$ definiuję jako:
+
+$$
+R = \left|\frac{B}{A}\right|
+$$ (R)
+```
+
+Do równania {eq}`ab1` podstawiam {eq}`fa`:
+
+$$
+1 + \frac{B}{A} &= \cancel{e^{i k_1 a}} \left(cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right) \right) 2 \cancel{e^{-i k_1 a}} \left(2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right) \right)^{-1} \\
+\frac{B}{A} &= 2 \frac{cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right)}{2 cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{k_1 k_2} sinh \left(k_2 a\right)} - 1 \\
+\frac{B}{A} &= \frac{cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right)}{cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right)} - 1 \\
+$$
+
+```{admonition} Przekształcenie
+Sprowadzam powyższe ułamki do wspólnego mianownika i obliczam końcową postać licznika:
+
+$$
+cosh\left(k_2 a\right) - i \frac{k_1}{k_2} sinh \left(k_2 a\right) - cosh\left(k_2 a\right) - i \frac{k_2^2 - k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right) = \\
+= - i \frac{k_1}{k_2} sinh \left(k_2 a\right) - i \frac{k_2^2 - k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right) = \\
+= - i\left(\frac{k_1}{k_2} + \frac{k_2^2 - k_1^2}{2 k_1 k_2} \right) sinh \left(k_2 a\right) = \\
+= - i \frac{2 k_1^2 + k_2^2 - k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right) = \\
+= - i \frac{k_2^2 + k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right) = \\
+$$
+```
+
+$$
+\frac{B}{A} &= \frac{- i \frac{k_2^2 + k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right)}{cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right)} \\
+$$
+
+Następnie podstawiam do {eq}`R`:
+
+$$
+R &= \frac{- i \frac{k_2^2 + k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right)}{cosh\left(k_2 a\right) + i \frac{k_2^2 - k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right)} \frac{i \frac{k_2^2 + k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right)}{cosh\left(k_2 a\right) - i \frac{k_2^2 - k_1^2}{2 k_1 k_2} sinh \left(k_2 a\right)} \\
+R &= \frac{\frac{\left(k_2^2 + k_1^2\right)^2}{4 k_1^2 k_2^2} sinh^2 \left(k_2 a\right)}{cosh^2 \left(k_2 a\right) + \frac{\left(k_2^2 - k_1^2\right)^2}{4 k_1^2 k_2^2} sinh^2 \left(k_2 a\right)} \\
+R &= \frac{\frac{\left(k_2^2 + k_1^2\right)^2}{4 k_1^2 k_2^2} sinh^2 \left(k_2 a\right)}{1 + \left(1 + \frac{\left(k_2^2 - k_1^2\right)^2}{4 k_1^2 k_2^2}\right) sinh^2 \left(k_2 a\right)} \\
+R &= \frac{\frac{\left(k_2^2 + k_1^2\right)^2}{4 k_1^2 k_2^2} sinh^2 \left(k_2 a\right)}{1 + \frac{\left(k_1^2 + k_2^2\right)^2}{4 k_1^2 k_2^2} sinh^2 \left(k_2 a\right)} \\
+R &= \frac{\left(k_2^2 + k_1^2\right)^2}{4 k_1^2 k_2^2} sinh^2 \left(k_2 a\right) T \\
+$$
+
+Po podstawieniu {eq}`k-podst` otrzymuję:
+
+$$
+R &= \frac{V_0^2}{16E(V_0 - E)} sinh^2 \left(k_2 a\right) T \\
+R &= \frac{V_0^2}{16E(V_0 - E)} T sinh^2\left(\sqrt{\frac{2m}{\hbar^2} (V_0-E)} a\right)
+$$
+
+```{raw} latex
+\newpage
+```
+
 # Podsumowanie
 
 Jak widać z {eq}`wzor-koncowy` wsþółczynnik Transmisji jest niezerowy, co
-oznacza, że cząstka o niewystarczającej energii może przeniknąć przez barierę potencjału.
+oznacza, że cząstka o niewystarczającej energii może mimo to przeniknąć przez barierę potencjału.
 
-Poniższy wykres przedstawia 
+Poniższy wykres przedstawia zależności $T(a)$ dla 2 przykładowch potancjałów.
 
 ```{plot} gnuplot
 :caption: Zależność współczynnika transmisji od szerokości bariery.
 
-set xrange [0:4]
+set xrange [0:3.5]
 set ylabel "T - współczynnik transmisji"
 set xlabel "a - szerokość bariery"
 
@@ -283,8 +340,8 @@ E = 1
 
 f(a, V) = (1  + sinh(sqrt((2*m)/(hbar**2) * (V-E)) * a)**2 * (V**2)/(16*E*(V - E)) )**(-1)
 
-plot f(x, 2) lw 2 title "T(a, V_0 = 2 j.u.)", \
-     f(x, 4) lw 2 title "T(a, V_0 = 4 j.u.)",
+plot f(x, 2) lw 4 title "T(a, V_0 = 2 j.u.)", \
+     f(x, 4) lw 4 title "T(a, V_0 = 4 j.u.)",
 ```
 
 ```{attention}
