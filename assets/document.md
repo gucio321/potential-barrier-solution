@@ -81,7 +81,7 @@ natomiast $B e^{-i k_1 x}$ opisuje falę odbitą.
 \draw (0,0) -- (2,0) -- (2,2) -- (3, 2) -- (3,0) -- (5,0);
 \node[anchor=north] at (2, 0) {0};
 \node[anchor=north] at (3, 0) {a};
-\node at (6, 2.5) {$V_0$};
+\node at (2.5, 1) {$V_0$};
     \draw[domain=0:2, samples=100]
         plot (\x, {0.3*sin(10 * \x r) + 1})
         plot (\x, {0.1*sin(15 * \x r) + 0.5});
